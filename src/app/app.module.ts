@@ -14,6 +14,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SalaEditComponent } from './sala/sala-edit/sala-edit.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthService } from './auth.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

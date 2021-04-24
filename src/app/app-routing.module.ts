@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SalaEditComponent } from './sala/sala-edit/sala-edit.component';
 import { SalaComponent } from './sala/sala.component';
+import { TorneoComponent } from './torneo/torneo.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
     children: [
       {path: 'edit', component: SalaEditComponent}
   ]},
+  {path: 'torneo', component: TorneoComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

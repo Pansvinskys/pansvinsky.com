@@ -13,8 +13,8 @@ import { ListaEsperaComponent } from './sala/lista-espera/lista-espera.component
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SalaEditComponent } from './sala/sala-edit/sala-edit.component';
 import { LoginComponent } from './login/login.component';
-
-import { AuthService } from './auth.service'
+import { TorneoComponent } from './torneo/torneo.component';
+import { AuthGuard } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -27,12 +27,13 @@ import { AuthService } from './auth.service'
     NotFoundComponent,
     SalaEditComponent,
     LoginComponent,
+    TorneoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

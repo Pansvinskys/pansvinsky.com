@@ -9,18 +9,16 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
   userInput = new ElementRef("userInput");
   passInput = new ElementRef("passInput");
+  loggedIn = false
 
-  constructor(private authService: AuthService) { }
-
-  ngOnInit(): void {
-
+  constructor(private authService: AuthService) { 
   }
 
-  authStatus(){
-    this.authService.isAuthenticated().then(
-      (authenticated: boolean) => {
-        return authenticated;
-      }
+  ngOnInit(): void {
+    this.authService.sessionStatus.subscribe(
+      (status: {loggedIn: boolean}) => {
+        this.loggedIn = status.loggedIn;
+      } 
     )
   }
 
